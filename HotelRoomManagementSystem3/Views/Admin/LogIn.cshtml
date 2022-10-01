@@ -1,0 +1,48 @@
+﻿@model staff
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+
+            
+<h1>LogIn</h1>
+<body class="f7">
+    <form action="/Admin/LogIn" method="post">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="Room">USER NAME</label>
+                <input type="password" class="form-control" id="StaffName" name="StaffName" placeholder="User Name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="FcilentName">PASSWORD</label>
+                <input type="password" class="form-control" id="StaffPassword" name="StaffPassword" placeholder="Password">
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">LOG IN</button>
+
+    </form>
+</body>
+@section scripts{
+    <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["ErrorMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+    </script>
+}
+
+
+

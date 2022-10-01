@@ -1,0 +1,111 @@
+﻿@model Reservation1
+@{
+    ViewData["Title"] = "DsplayReservDetail";
+    Layout = "~/views/shared/_mylayout.cshtml";
+}
+<div class="f9">
+    <center>
+
+        <h2>Dear   <b>@Model.FcilentName  </b>   Here Is Your Booking Information </h2>
+        <h3>Reservation ID:@Model.Resid</h3>
+    </center>
+    <br />
+
+    <form action="/reservation/edit" method="post">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <input type="hidden" name="Resid" value="@Model.Resid" />
+                <label for="Room">Room Number</label>
+
+                <input type="number" class="form-control" id="Room" name="Room" placeholder="Room Number" value="@Model.Room">
+                @Html.ValidationMessageFor(model => model.Room, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="FcilentName">First Name</label>
+                <input type="text" class="form-control" id="FcilentName" name="FcilentName" placeholder="First Name" value="@Model.FcilentName">
+                @Html.ValidationMessageFor(model => model.FcilentName, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="LcilentName">Last Name</label>
+                <input type="text" class="form-control" id="LcilentName" name="LcilentName" placeholder="Last Name" value="@Model.LcilentName">
+                @Html.ValidationMessageFor(model => model.LcilentName, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group col-md-6">
+                <br />
+                <label for="RoomType">Room Type</label>
+                <input type="text" class="form-control" id="RoomType" name="RoomType" placeholder="Single OR Double " value="@Model.RoomType">
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="CilentPhone">Phone Number</label>
+                <input type="text" class="form-control" id="CilentPhone" name="CilentPhone" placeholder="phone number" value="@Model.CilentPhone">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="CilentAdress">Address</label>
+                <input type="text" class="form-control" id="CilentAdress" name="CilentAdress" placeholder="Adress" value="@Model.CilentAdress">
+                @Html.ValidationMessageFor(model => model.CilentAdress, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="CheckIn">Check In</label>
+                <input type="date" class="form-control" id="CheckIn" name="CheckIn" placeholder="Check In" value="@Model.CheckIn.ToString("yyyy-MM-dd")">
+                @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group col-md-6">
+                <label for="CheckOut">Check Out</label>
+                <input type="date" class="form-control" id="CheckOut" name="CheckOut" placeholder="Check Out" value="@Model.CheckOut.ToString("yyyy-MM-dd")">
+                @Html.ValidationMessageFor(model => model.CheckOut, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="PaymentAmount">Payment Amount</label>
+                <input type="number" class="form-control" id="PaymentAmount" name="PaymentAmount" placeholder="Payment Amount" value="@Model.PaymentAmount.ToString()">
+                @Html.ValidationMessageFor(model => model.PaymentAmount, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class="btn btn-danger" href="/product/index">Delete</a>
+    </form>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["successMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+    </script>
+}
+
+
+
+
+
+

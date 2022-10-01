@@ -1,0 +1,40 @@
+﻿@model Reservation1
+@{
+    ViewData["Title"] = "GuestLogIn";
+}
+<body class="f4">
+  <h1>GuestLogIn</h1>
+
+    <form action="/Reservation/GuestLogIn" method="post">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                
+                <input type="password" class="form-control" id="Resid" name="Resid" placeholder="Reservation Id">
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-success">LOG IN</button>
+
+    </form>
+</body>
+@section scripts{
+    <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["ErrorMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+    </script>
+}
+
+
+

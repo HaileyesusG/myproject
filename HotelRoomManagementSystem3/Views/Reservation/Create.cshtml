@@ -1,0 +1,65 @@
+﻿@model Reservation1
+@{
+    ViewData["Title"] = "Create";
+}
+<body class="f5">
+    <h2>Create Reservation</h2>
+    <form action="/reservation/create" method="post">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="Room">RoomNumber</label>
+                <input readonly type="number" class="form-control" id="Room" name="Room" placeholder="Room Number" value="@ViewBag.id">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="FcilentName">FirstCilentName</label>
+                <input type="text" class="form-control" id="FcilentName" name="FcilentName" placeholder="FirstCilentName">
+                @Html.ValidationMessageFor(model => model.FcilentName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6">
+                <label for="LcilentName">LastCilentName</label>
+                <input type="text" class="form-control" id="LcilentName" name="LcilentName" placeholder="LastCilentName">
+                @Html.ValidationMessageFor(model => model.LcilentName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="CilentPhone">PhoneNumber</label>
+                <input type="text" class="form-control" id="CilentPhone" name="CilentPhone" placeholder="PhoneNumber">
+                @Html.ValidationMessageFor(model => model.CilentPhone, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6">
+                <label for="CilentAdress">Address</label>
+                <input type="text" class="form-control" id="CilentAdress" name="CilentAdress" placeholder="Address">
+                @Html.ValidationMessageFor(model => model.CilentAdress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="CheckIn">CheckIn</label>
+                <input type="date" class="form-control" id="CheckIn" name="CheckIn" placeholder="CheckIn">
+                @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6">
+                <label for="CheckOut">CheckOut</label>
+                <input type="date" class="form-control" id="CheckOut" name="CheckOut" placeholder="CheckOut">
+                @Html.ValidationMessageFor(model => model.CheckOut, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="RoomType">Room Type</label>
+                <input readonly type="text" class="form-control" id="RoomType" name="RoomType" placeholder="RoomType" value="@ViewBag.type">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="PaymentAmount">Payment Amount</label>
+                <input readonly type="number" class="form-control" id="PaymentAmount" name="PaymentAmount" placeholder="Payment Amount" step="any" value="@ViewBag.pay">
+                @Html.ValidationMessageFor(model => model.PaymentAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Create</button>
+        <a class="btn btn-danger" href="/product/index">Cancel</a>
+    </form>
+</body>

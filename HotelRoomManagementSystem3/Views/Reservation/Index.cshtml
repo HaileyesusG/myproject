@@ -1,0 +1,80 @@
+﻿@model List<Room>
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="f2">
+    <h1>SINGLE ROOM LIST</h1>
+    <table class="table">
+        <tr>
+            <th>RoomId</th>
+            <th>Room Phone</th>
+            <th>Room Status</th>
+            <th>Room type</th>
+            <th>Payment Amount</th>
+            <th>Book Room</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.Roomtype == "single")
+            {
+
+                <tr>
+                    <td>@item.RoomId</td>
+                    <td>@item.RoomPhone</td>
+                    <td>@item.RoomStatus</td>
+                    <td>@item.Roomtype</td>
+                    <td>@item.PaymentAmount</td>
+
+                    <td>
+                        <a href="/reservation/create/@item.RoomId" class=" btn btn-outline-info" style='display:@{ if (item.RoomStatus == "busy"||item.RoomStatus == "BUSY") { Write("none"); } } '>BOOK</a>
+                    </td>
+
+
+
+                </tr>
+            }
+
+        }
+    </table>
+    <br /><br />
+    <h1>Double ROOM LIST</h1>
+    <table class="table">
+        <tr>
+            <th>RoomId</th>
+            <th>Room Phone</th>
+            <th>Room Status</th>
+            <th>Room type</th>
+            <th>Payment Amount</th>
+            <th>Book Room</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.Roomtype == "Double")
+            {
+
+                <tr>
+                    <td>@item.RoomId</td>
+                    <td>@item.RoomPhone</td>
+                    <td>@item.RoomStatus</td>
+                    <td>@item.Roomtype</td>
+                    <td>@item.PaymentAmount</td>
+
+                    <td>
+                        <a href="/reservation/create/@item.RoomId" class=" btn btn-outline-info" style='display:@{ if (item.RoomStatus == "busy"||item.RoomStatus == "BUSY") { Write("none"); } } '>BOOK</a>
+                    </td>
+
+
+
+                </tr>
+            }
+
+        }
+    </table>
+
+
+    <div class="text-white">
+        <a href="/product/create" class="btn btn-outline-success">Add New Product</a>
+    </div>
+</body>
+
+

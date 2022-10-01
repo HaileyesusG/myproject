@@ -1,0 +1,45 @@
+﻿@model List<Reservation1>
+@{
+    ViewData["Title"] = "DsplayReserv";
+}
+<body class="f2">
+    <h1>DsplayReserv</h1>
+
+    <table class="table">
+        <tr>
+            <th>RoomId</th>
+            <th>Room Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Room Type</th>
+            <th>Payment Amount</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Resid</td>
+                <td>@item.Room</td>
+                <td>@item.FcilentName</td>
+                <td>@item.LcilentName</td>
+                <td>@item.CilentPhone</td>
+                <td>@item.CilentAdress</td>
+                <td>@item.CheckIn</td>
+                <td>@item.CheckOut</td>
+                <td>@item.RoomType</td>
+                <td>@item.PaymentAmount</td>
+
+                <td>
+                    <a href="/reservation/create/@item.Resid" class=" btn btn-outline-info">BOOK</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+    <div class="text-white">
+        <a href="/product/create" class="btn btn-outline-success">Add New Product</a>
+    </div>
+</body>

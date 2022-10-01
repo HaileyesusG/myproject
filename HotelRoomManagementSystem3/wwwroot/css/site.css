@@ -1,0 +1,240 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.f1 {
+    /* Margin bottom by footer height */
+   padding-bottom:50px;
+   padding-bottom:20px;
+    background-image: url('../images/careb.jpg');
+    background-size:cover;
+   
+    background-repeat:no-repeat;
+    margin:auto;
+   
+}
+.f2 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/superior-accom-02.jpg');
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    
+}
+.f3 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/0516-hotelsheets.jpg');
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    height:100vh;
+}
+.f4 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/careb.jpg');
+    background-size: cover;
+   
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.f5 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/11-Things-travelers-check-for-before-booking-a-hotel-online-1.jpg');
+    background-size: cover;
+   
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.f6 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/Reservationimg.png');
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.f7 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/1_XUrSasLtkB0VoXcLEMfJKg.jpeg');
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.f8 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/0516-hotelsheets.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+   
+}
+.f9 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/fundo-da-potência-23540385.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.f10 {
+    /* Margin bottom by footer height */
+    padding-bottom: 50px;
+    padding-bottom: 20px;
+    background-image: url('../images/novotel-duvet-cover-pillowcase_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.t1{
+    color:deeppink;
+    
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.b12 {
+    text-decoration: none;
+    display: grid;
+    width: 250px;
+    height: 80px;
+    background: linear-gradient(#ffd800, #6f3bff);
+    position: absolute;
+    margin: auto;
+    left: 18px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    position: relative;
+    top: 80px;
+}
+
+.b13 {
+    text-decoration:none;
+    display: grid;
+    width: 250px;
+    height: 80px;
+    background: linear-gradient(#ff006e, #6f3bff);
+    position: absolute;
+    margin: auto;
+    left: 18px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    position: relative;
+    top: 80px;
+    
+}
+* {
+    margin: 0;
+    padding:0;
+}
+.tse {
+    width: 30px;
+    height: 30px;
+}
+#dwn {
+    width: 300px;
+    height: 250px;
+}
+#psideP {
+   color:orangered
+}
+.footer {
+    text-align: center;
+    word-spacing: 05px;
+}
+

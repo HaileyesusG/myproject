@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Reservation1>
+@{
+    ViewData["Title"] = "DsplayReserv";
+    Layout = "~/views/shared/_mylayout2.cshtml";
+}
+
+
+@if (@ViewBag.Session == "2")
+{
+    <h1>Guest List  </h1>
+    <body class="f8" color="red">
+        <form action="/Admin/DashBoard" method="post" class="d-flex">
+            <input class="form-control me-sm-2" type="text" placeholder="Search" id="search" name="search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <table class="table">
+            <tr>
+                <th>Reservation Id</th>
+                <th>Room Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Room Type</th>
+                <th>Payment Amount</th>
+            </tr>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="3" style="color:red">
+                        No Match Any Document
+                    </td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.Resid</td>
+                        <td>@item.Room</td>
+                        <td>@item.FcilentName</td>
+                        <td>@item.LcilentName</td>
+                        <td>@item.CilentPhone</td>
+                        <td>@item.CilentAdress</td>
+                        <td>@item.CheckIn</td>
+                        <td>@item.CheckOut</td>
+                        <td>@item.RoomType</td>
+                        <td>@item.PaymentAmount</td>
+
+                        <td>
+                            <a href="/reservation/delete/@item.Resid" class=" btn btn-outline-info">UNBOOK</a>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+    </body>
+    @section scripts{
+        <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["successMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+        </script>
+    }
+}
+else if (@ViewBag.session == "3")
+{
+<div>
+    <h1>Illegal access To the Admin's DashBoard is forbidden!!!'</h1>
+    <h2>Please LogIn First!!!'</h2>
+    <input type="button" value="LOGIN" onclick="@("window.location.href='"+ Url.Action("login","admin")+"'");" />
+</div>
+}
+
+

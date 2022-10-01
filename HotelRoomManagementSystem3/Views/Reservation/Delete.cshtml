@@ -1,0 +1,65 @@
+﻿@model Reservation1
+@{ ViewData["Title"] = "Delete"; }
+
+<h2>Delete Product</h2>
+<form action="/Reservation/Delete/@Model.Resid" method="post">
+    <table class="table">
+        <tr>
+            <td>
+                <label for="ProductName">Guest First Name</label>
+            </td>
+            <td>
+
+                @Model.FcilentName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Price">Guest Last Name</label>
+            </td>
+            <td>
+                @Model.LcilentName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Price">Address</label>
+            </td>
+            <td>
+                @Model.CilentAdress
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Price">Room Number</label>
+            </td>
+            <td>
+                @Model.Room
+            </td>
+        </tr>
+
+    </table>
+
+    <div>Are you sure to delete this product?</div>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-warning" href="/admin/dashboard">Cancel</a>
+</form>
+@section scripts{
+    <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["successMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+    </script>
+}
+
+
+

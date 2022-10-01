@@ -1,0 +1,77 @@
+﻿@model Reservation1
+@{
+    ViewData["Title"] = "DsplayReservDetail";
+}
+<body class="f6" text="red">
+    <center>
+        <h2>Here Is Your Booking Information </h2>
+        <h4>It Is Highly Recommended to remember your reservation ID For Future Uses</h4>
+        <h3>OR</h3>
+        <h4>You Can Download This Page Here</h4>
+        <center>
+
+            <a href="#" download style="text-decoration: none;">Download Now</a>
+        </center>
+        
+    </center>
+
+    <table class="table">
+        <tr>
+            <th>Reservation Id</th>
+            <td>@Model.Resid</td>
+        </tr>
+        <tr>
+            <th>Room Number</th>
+            <td>@Model.Room</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>@Model.FcilentName</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>@Model.LcilentName</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>@Model.CilentPhone</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>@Model.CilentAdress</td>
+        </tr>
+        <tr>
+            <th>Check In</th>
+            <td>@Model.CheckIn</td>
+        </tr>
+        <tr>
+            <th>Check Out</th>
+            <td>@Model.CheckOut</td>
+        </tr>
+        <tr>
+            <th>Room Type</th>
+            <td>@Model.RoomType</td>
+        </tr>
+        <tr>
+            <th>Payment Amount</th>
+            <td>@Model.PaymentAmount</td>
+        </tr>
+    </table>
+</body>
+  
+@section scripts{
+    <script type="text/javascript">
+        function opensuc(strmsg) {
+            var mydiv = document.getElementById("modalSuccessAlert");
+            mydiv.innerHTML = strmsg;
+            $('#modalSuccess').modal('show');
+        }
+        $(document).ready(function () {
+
+            var msg = "@TempData["successMessage"]";
+            if (msg)
+                opensuc(msg);
+
+        });
+    </script>
+}

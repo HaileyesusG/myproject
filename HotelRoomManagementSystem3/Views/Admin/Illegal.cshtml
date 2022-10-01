@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Illegal";
+}
+
+<h1>Illegal access To the Admin's DashBoard is forbidden!!!'</h1>
+<h2>Please LogIn First!!!'</h2>
+<div>
+    <input type="button" value="LOGIN" onclick="@("window.location.href='"+ Url.Action("login","admin")+"'");"/>
+</div>
+
